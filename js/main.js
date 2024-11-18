@@ -1,5 +1,5 @@
 // Main JavaScript file
-import './styles/main.less'
+import '../less/main.less';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
