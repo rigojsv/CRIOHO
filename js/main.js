@@ -61,7 +61,7 @@ class SliderController {
   slider = null;
   slides = [];
   framestack = null;
-  intervalTime = 3000;
+  intervalTime = 8000;
   intervalId = null;
   currentSlide = -1;
   slideDirection = 1;
