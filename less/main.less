@@ -24,29 +24,27 @@ body {
   background-color: @light-bg;
 }
 
-// Layout
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 // Navigation
 .main-nav {
   background: white;
-  padding: 1rem 2rem;
+  padding: 10px 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    
-    a {
-      color: @primary-color;
-      text-decoration: none;
+    display: flex;
+    align-items: center;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      padding: 0px 10px;
+      letter-spacing: 5px;
     }
   }
 
@@ -74,39 +72,6 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     color: @primary-color;
-  }
-}
-
-// Hero Section
-.hero {
-  background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.9)),
-              url('/images/hero-bg.jpg') center/cover;
-  color: white;
-  text-align: center;
-  padding: 6rem 2rem;
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: @secondary-color;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background: darken(@secondary-color, 10%);
-    }
   }
 }
 
@@ -170,257 +135,22 @@ footer {
   }
 }
 
-// Services Page
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: rotate(0deg) translateY(0) scale(1.02);
-    }
-
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 1rem 0;
-      padding-left: 0;
-
-      li {
-        margin: 0.5rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-
-        &:before {
-          content: "✓";
-          position: absolute;
-          left: 0;
-          color: @success-color;
-        }
-      }
-    }
-    .cta-button{    
-      padding: 1rem;
-      margin-top: auto;
-      background: @primary-color;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        background: @secondary-color;
-        color: @primary-color;
-      }
-
-    }
-  }
-}
-
-// About Page
-.about-hero {
-  background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.9)),
-              url('/images/about-bg.jpg') center/cover;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: white;
-}
-
-.mission-vision {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  background: @light-bg;
-
-  .mission, .vision {
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    h2{
-        text-align: center;
-    }
-  }
-}
-
-.team-section {
-  padding: 4rem 2rem;
-  text-align: center;
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .team-member {
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-// Donations Page
-.donations-hero {
-  background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(44, 82, 130, 0.9)),
-              url('/images/donations-bg.jpg') center/cover;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: white;
-}
+@import './carousel.less';
+@import './services.less';
+@import './about.less';
+@import './sponsor.less';
+@import './events.less';
+@import './contact.less';
 
 
 
-// Events Page
-.events-grid {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
 
-  .event-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
-    .event-date {
-      background: @primary-color;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 100px;
 
-      .day {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-    }
 
-    .event-content {
-      padding: 1.5rem;
 
-      .register-btn{
-        padding: 0.75rem;
-        font-size: 1rem;
-        margin-top: 5px;
-        font-weight: 700;
-        background: @primary-color;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        &:hover {
-          background: @secondary-color;
-          color: @primary-color;
-        }
-      }
-    }
-  }
-}
 
-// Contact Page
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
 
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-
-  .info-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-}
-
-.contact-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-  .form-group {
-    margin-bottom: 1.5rem;
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: @text-color;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 4px;
-      transition: border-color 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-color: @primary-color;
-      }
-    }
-  }
-
-  .submit-btn{
-    width: 100%;
-    padding: 1rem;
-    background: @primary-color;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background: darken(@primary-color, 10%);
-    }
-  }
-}
-
-.map-container {
-  margin-top: 2rem;
-  padding: 0 2rem 2rem;
-
-  iframe {
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-}
 
 // Enhanced Responsive Design
 @media (max-width: 768px) {
